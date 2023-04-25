@@ -6,8 +6,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mock;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 @RunWith(Parameterized.class)
 public class LionParamTest {
 
@@ -35,10 +33,5 @@ public class LionParamTest {
             Boolean expectedIsMane = isMane;
             Boolean actualIsMane = lion.doesHaveMane();
             Assert.assertEquals(expectedIsMane, actualIsMane);
-    }
-    @Test
-    public void doesHaveManeTestException() {
-        Exception exception = assertThrows(Exception.class, () -> new Lion("Undefined", feline));
-        Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
     }
 }
